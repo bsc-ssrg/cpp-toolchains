@@ -1,2 +1,3 @@
-# cpp-toolchain
-A docker image with common GCC/LLVM toolchains preinstalled
+# cpp-toolchains
+
+Docker containers with preinstalled GCC/LLVM toolchains for CI testing
