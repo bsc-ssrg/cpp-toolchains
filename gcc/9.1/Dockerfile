@@ -2,7 +2,7 @@ FROM ubuntu:xenial
 MAINTAINER alberto.miranda@bsc.es
 
 RUN apt-get update && \
-    apt-get install software-properties-common && \
+    apt-get install -y software-properties-common && \
     add-apt-repository -y ppa:ubuntu-toolchain-r/test && \
     apt-get update && \
     apt-get install -y g++-9 && \
