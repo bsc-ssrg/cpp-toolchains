@@ -1,4 +1,5 @@
 # Docker containers for GCC/LLVM toolchains
+[![GitHub](https://img.shields.io/github/license/bsc-ssrg/cpp-toolchains.svg?color=blue)](https://github.com/bsc-ssrg/cpp-toolchains/blob/master/LICENSE)
 [![Docker Pulls](https://img.shields.io/docker/pulls/bscstorage/gcc-toolchain.svg?label=GCC%20docker%20pulls)](https://cloud.docker.com/repository/docker/bscstorage/gcc-toolchain)
 
 A collection of images containing official GCC/LLVM releases under Ubuntu 16.04 Xenial.
