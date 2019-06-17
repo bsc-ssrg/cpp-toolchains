@@ -1,0 +1,29 @@
+# sudo: required
+language: bash
+services: docker
+
+env:
+  - VERSION=4.8
+  - VERSION=4.9
+  - VERSION=5.4
+  - VERSION=6.5
+  - VERSION=7.4
+  - VERSION=8.1
+  - VERSION=9.1
+
+before_script:
+  - env | sort
+  - cd gcc/"$VERSION"
+  - image="gcc:$VERSION"
+
+script:
+  - |
+    (
+      set -Eeuo pipefail
+      set -x
+      docker build -t "$image" .
+      docker run -ti --rm "$image" gcc --version
+    )
+
+after_script:
+  - docker images
