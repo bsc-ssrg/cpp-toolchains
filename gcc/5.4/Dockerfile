@@ -1,7 +1,10 @@
 FROM ubuntu:xenial
 MAINTAINER alberto.miranda@bsc.es
 
-RUN apt-get update -y && \
+RUN apt-get update && \
+    apt-get install software-properties-common && \
+    add-apt-repository -y ppa:ubuntu-toolchain-r/test && \
+    apt-get update && \
     apt-get install -y g++-5 && \
     update-alternatives --quiet --install /lib/cpp cpp /usr/bin/cpp-5 10 && \
     update-alternatives --quiet --install /usr/bin/cc cc /usr/bin/gcc-5 20 && \
