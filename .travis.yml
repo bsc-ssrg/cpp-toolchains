@@ -34,7 +34,7 @@ script:
       set -Eeuo pipefail
       set -x
       docker build -t "$image" .
-      docker run -ti --rm "$image" "$COMPILER" --version
+      docker run -ti --rm "$image" "$COMPILER-$VERSION" --version
     )
 
 after_script:
