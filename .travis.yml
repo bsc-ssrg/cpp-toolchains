@@ -11,6 +11,17 @@ env:
   - COMPILER=gcc VERSION=8.1
   - COMPILER=gcc VERSION=9.1
   - COMPILER=gcc VERSION=latest
+  - COMPILER=clang VERSION=3.6
+  - COMPILER=clang VERSION=3.7
+  - COMPILER=clang VERSION=3.8
+  - COMPILER=clang VERSION=3.9
+  - COMPILER=clang VERSION=4.0
+  - COMPILER=clang VERSION=5.0
+  - COMPILER=clang VERSION=6.0
+  - COMPILER=clang VERSION=7.1
+  - COMPILER=clang VERSION=8.0
+  - COMPILER=clang VERSION=9.0
+  - COMPILER=clang VERSION=latest
 
 before_script:
   - env | sort
