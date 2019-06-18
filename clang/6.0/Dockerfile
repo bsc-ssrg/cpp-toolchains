@@ -6,6 +6,11 @@ RUN apt-get update && \
     update-alternatives --quiet --install /usr/bin/c++ c++ /usr/bin/clang++-6.0 10 && \
     update-alternatives --quiet --install /usr/bin/cc cc /usr/bin/clang-6.0 10 && \
     update-alternatives --quiet --install /usr/bin/c89 c89 /usr/bin/clang-6.0 10 && \
-    update-alternatives --quiet --install /usr/bin/c99 c99 /usr/bin/clang-6.0 10
+    update-alternatives --quiet --install /usr/bin/c99 c99 /usr/bin/clang-6.0 10 && \
+    ln -s /usr/bin/clang-6.0 /usr/bin/clang && \
+    ln -s /usr/bin/clang++-6.0 /usr/bin/clang++ && \
+    ln -s /usr/bin/clang-apply-replacements-6.0 /usr/bin/clang-apply-replacements && \
+    ln -s /usr/bin/clang-check-6.0 /usr/bin/clang-check && \
+    ln -s /usr/bin/clang-query-6.0 /usr/bin/clang-query
 
 CMD [ "/bin/bash" ]
