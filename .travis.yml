@@ -3,25 +3,29 @@ language: bash
 services: docker
 
 env:
-  - COMPILER=gcc VERSION=4.8
-  - COMPILER=gcc VERSION=4.9
-  - COMPILER=gcc VERSION=5.4
-  - COMPILER=gcc VERSION=6.5
-  - COMPILER=gcc VERSION=7.4
-  - COMPILER=gcc VERSION=8.1
-  - COMPILER=gcc VERSION=9.1
-  - COMPILER=gcc VERSION=latest
-  - COMPILER=clang VERSION=3.6
-  - COMPILER=clang VERSION=3.7
-  - COMPILER=clang VERSION=3.8
-  - COMPILER=clang VERSION=3.9
-  - COMPILER=clang VERSION=4.0
-  - COMPILER=clang VERSION=5.0
-  - COMPILER=clang VERSION=6.0
-  - COMPILER=clang VERSION=7.1
-  - COMPILER=clang VERSION=8.0
-  - COMPILER=clang VERSION=9.0
-  - COMPILER=clang VERSION=latest
+  global:
+    - REGISTRY_USER=storagebofh
+    - secure: ASMKoQMxkwwLn+6fK5EHn5N3iwQit8Tmedjmi4MOWl2mhNXBr2VEhOAzIhXnF1Wta82AiuYsRv8yMnbv3bNpNKO3znizKT/CmyxnFxp9rn4aOZwenD7szBCKoEpBUCKwkHBYirIj0oA7zm/oEYAvsyB0/ary+ljCFIMSV2ntbJJCXV9ZS6Vmz5JvYA1KlddRp5LHoE08eIkl04AP9XU4iPRsjjzWATcuNNOhzyzKnFvOMzbul6J+LDA3KL0tBKoC4jRqDUdPJqNeezYzuUv3aER6N5oma8OIusvkJgxc62EshUQx5Zckqa4+9G/UpbPQpbLdQwBRjv8qLOSHS2B4YsXFX+MZYwJ5kjTh6bf4RGctAa8F44Tt5cQx19F0bETMx/YBHCIqaQf4LU9txCkdIEgO0TejZ1bjNK+ETeT2nj33U2K39/N1XNQM/sB578Levy/5gssI+dzMv7u07U9mCGrnVhXEwV+2/B5yzrIYpw+6DUv+ZMwYsELdJeIy63QKGqvLUcS4/FkqDqqfUDqAxqN46hyaonL+75YisBR02PlaBaLLnvFd2uLd9yiO0ZHufNCSAlfBfPWpegF81NGZWx8s1n4Qp7pw/ZjqahMzd6OJvyyJ+4oq6blObvqOH40gw8VLt8dK9huppbbjQFFWfEgVq6WFNML5AWsVSSvYLE0=
+  matrix:
+    - COMPILER=gcc VERSION=4.8
+    - COMPILER=gcc VERSION=4.9
+    - COMPILER=gcc VERSION=5.4
+    - COMPILER=gcc VERSION=6.5
+    - COMPILER=gcc VERSION=7.4
+    - COMPILER=gcc VERSION=8.1
+    - COMPILER=gcc VERSION=9.1
+    - COMPILER=gcc VERSION=latest
+    - COMPILER=clang VERSION=3.6
+    - COMPILER=clang VERSION=3.7
+    - COMPILER=clang VERSION=3.8
+    - COMPILER=clang VERSION=3.9
+    - COMPILER=clang VERSION=4.0
+    - COMPILER=clang VERSION=5.0
+    - COMPILER=clang VERSION=6.0
+    - COMPILER=clang VERSION=7.1
+    - COMPILER=clang VERSION=8.0
+    - COMPILER=clang VERSION=9.0
+    - COMPILER=clang VERSION=latest
 
 before_script:
   - env | sort
@@ -39,3 +43,12 @@ script:
 
 after_script:
   - docker images
+
+before_deploy:
+  - docker login -u "$REGISTRY_USER" -p "$REGISTRY_PASS"
+
+deploy:
+  provider: script
+  script: 
+    - docker images
+
