@@ -15,6 +15,7 @@ RUN apt-get update && \
     ln -s /usr/bin/clang++-9 /usr/bin/clang++ && \
     ln -s /usr/bin/clang-apply-replacements-9 /usr/bin/clang-apply-replacements && \
     ln -s /usr/bin/clang-check-9 /usr/bin/clang-check && \
-    ln -s /usr/bin/clang-query-9 /usr/bin/clang-query
+    ln -s /usr/bin/clang-query-9 /usr/bin/clang-query && \
+    rm -rf /var/lib/apt/lists/*
 
 CMD [ "/bin/bash" ]

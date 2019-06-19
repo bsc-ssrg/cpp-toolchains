@@ -10,6 +10,7 @@ RUN apt-get update && \
     update-alternatives --quiet --install /usr/bin/cc cc /usr/bin/gcc-7 20 && \
     update-alternatives --quiet --install /usr/bin/gcc gcc /usr/bin/gcc-7 20 && \
     update-alternatives --quiet --install /usr/bin/c++ c++ /usr/bin/g++-7 20 && \
-    update-alternatives --quiet --install /usr/bin/g++ g++ /usr/bin/g++-7 20
+    update-alternatives --quiet --install /usr/bin/g++ g++ /usr/bin/g++-7 20 && \
+    rm -rf /var/lib/apt/lists/*
 
 CMD [ "/bin/bash" ]
