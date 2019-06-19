@@ -30,7 +30,7 @@ env:
 before_script:
   - env | sort
   - cd "$COMPILER"/"$VERSION"
-  - image="$COMPILER:$VERSION"
+  - image="$COMPILER"-toolchain":$VERSION"
 
 script:
   - |
