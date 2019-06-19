@@ -30,15 +30,15 @@ env:
 before_script:
   - env | sort
   - cd "$COMPILER"/"$VERSION"
-  - image="$COMPILER"-toolchain":$VERSION"
+  - IMAGE="$COMPILER"-toolchain":$VERSION"
 
 script:
   - |
     (
       set -Eeuo pipefail
       set -x
-      docker build -t "$image" .
-      docker run -ti --rm "$image" "$COMPILER" --version
+      docker build -t "$IMAGE" .
+      docker run -ti --rm "$IMAGE" "$COMPILER" --version
     )
 
 after_script:
@@ -50,5 +50,6 @@ before_deploy:
 deploy:
   provider: script
   script: 
-    - docker images
-
+    - docker push bststorage/"$IMAGE"
+  on:
+    branch: master
