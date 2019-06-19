@@ -5,27 +5,27 @@ services: docker
 env:
   global:
     - REGISTRY_USER=storagebofh
-    - secure: ASMKoQMxkwwLn+6fK5EHn5N3iwQit8Tmedjmi4MOWl2mhNXBr2VEhOAzIhXnF1Wta82AiuYsRv8yMnbv3bNpNKO3znizKT/CmyxnFxp9rn4aOZwenD7szBCKoEpBUCKwkHBYirIj0oA7zm/oEYAvsyB0/ary+ljCFIMSV2ntbJJCXV9ZS6Vmz5JvYA1KlddRp5LHoE08eIkl04AP9XU4iPRsjjzWATcuNNOhzyzKnFvOMzbul6J+LDA3KL0tBKoC4jRqDUdPJqNeezYzuUv3aER6N5oma8OIusvkJgxc62EshUQx5Zckqa4+9G/UpbPQpbLdQwBRjv8qLOSHS2B4YsXFX+MZYwJ5kjTh6bf4RGctAa8F44Tt5cQx19F0bETMx/YBHCIqaQf4LU9txCkdIEgO0TejZ1bjNK+ETeT2nj33U2K39/N1XNQM/sB578Levy/5gssI+dzMv7u07U9mCGrnVhXEwV+2/B5yzrIYpw+6DUv+ZMwYsELdJeIy63QKGqvLUcS4/FkqDqqfUDqAxqN46hyaonL+75YisBR02PlaBaLLnvFd2uLd9yiO0ZHufNCSAlfBfPWpegF81NGZWx8s1n4Qp7pw/ZjqahMzd6OJvyyJ+4oq6blObvqOH40gw8VLt8dK9huppbbjQFFWfEgVq6WFNML5AWsVSSvYLE0=
+    - secure: "jcXxdOykf/XLI/ImRv5sXHcxxC+EeaGBrUe1+3oLxGwvpcPgXZKrWKpzPV3BJE+9dc3zg4rF9qXDgjkCFV7ot5wxG6akeHL5Vc7M3xp6Zr3d4eW58IDOE6tERzggxqlxxD2oH56Px9gujmqkTV4V71KWGO0PjHQo3vz8KppWCViSucxakcrVZQv37paHdxczn35c1CqNxihYbVsSOr3BZhZaItaalzPHoB7EptGAcmILv8ioygrsrbPZ5JCEhcq7dV1M8f7fxQZbLa0iPXzfRh5Z3tC2WFRoU0JczcbV+pYE9dU5iBXI9mgvtYYei9NF/biYX5J89JScKL99eKneCxth+SLm94Wq5D9hxpMAZe+7UyqSuH/uxVtf+8XSdHNyG75LUkfJFLxdk6QIgpGggfoDMUTfp7/90X1NGbwSf1m++YrZH/HbYRumzsG9G/o4nukaSsfkM1+boJtMHrikk0ZU06KL5t0W35qviGCJRHV0fxJnJ56WQeDXh1pK9ceIWFCB2uAglda2RHBC/EgnsOn8dSJ2sBmxzl3RVU29vBdUFfXR/22UJa+WF5aU4LiXYVffh+VdQBLOmAG+hJSU9mrouzv0/5Ha5YVE+RJ4suq3riSPPZ3bbeJI28Niln598NOQP6hBfyCwh/0EoBo1nmZwG6spXrV62Q0v5wnkxuw="
   matrix:
     - COMPILER=gcc VERSION=4.8
-    - COMPILER=gcc VERSION=4.9
-    - COMPILER=gcc VERSION=5.4
-    - COMPILER=gcc VERSION=6.5
-    - COMPILER=gcc VERSION=7.4
-    - COMPILER=gcc VERSION=8.1
-    - COMPILER=gcc VERSION=9.1
-    - COMPILER=gcc VERSION=latest
-    - COMPILER=clang VERSION=3.6
-    - COMPILER=clang VERSION=3.7
-    - COMPILER=clang VERSION=3.8
-    - COMPILER=clang VERSION=3.9
-    - COMPILER=clang VERSION=4.0
-    - COMPILER=clang VERSION=5.0
-    - COMPILER=clang VERSION=6.0
-    - COMPILER=clang VERSION=7.1
-    - COMPILER=clang VERSION=8.0
-    - COMPILER=clang VERSION=9.0
-    - COMPILER=clang VERSION=latest
+    # - COMPILER=gcc VERSION=4.9
+    # - COMPILER=gcc VERSION=5.4
+    # - COMPILER=gcc VERSION=6.5
+    # - COMPILER=gcc VERSION=7.4
+    # - COMPILER=gcc VERSION=8.1
+    # - COMPILER=gcc VERSION=9.1
+    # - COMPILER=gcc VERSION=latest
+    # - COMPILER=clang VERSION=3.6
+    # - COMPILER=clang VERSION=3.7
+    # - COMPILER=clang VERSION=3.8
+    # - COMPILER=clang VERSION=3.9
+    # - COMPILER=clang VERSION=4.0
+    # - COMPILER=clang VERSION=5.0
+    # - COMPILER=clang VERSION=6.0
+    # - COMPILER=clang VERSION=7.1
+    # - COMPILER=clang VERSION=8.0
+    # - COMPILER=clang VERSION=9.0
+    # - COMPILER=clang VERSION=latest
 
 before_script:
   - env | sort
