@@ -46,7 +46,7 @@ after_script:
 
 before_deploy:
   - echo $REGISTRY_USER
-  - docker login -u $REGISTRY_USER -p $REGISTRY_PASS
+  - docker login -u "$REGISTRY_USER" -p $REGISTRY_PASS
 
 deploy:
   provider: script
