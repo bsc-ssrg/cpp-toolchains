@@ -5,7 +5,6 @@ services: docker
 env:
   global:
     - REGISTRY_USER=storagebofh
-    - secure: n+XNzMYj5EINxkZ4k1zzKgzzbq0JVlqjXtqswJ081yYS338klONJQPlCbrtkWMOXi/B9ZmrwLQdmMj9QpG5DGsBbqDB46fbIhDPnC6Qx4xPqfIm+jb0fwZpXbh8gNYxwLeLldTib1gfQnzFCJhjuNGz4D5LKBu7lwWDp0/LWyr7Ttuioh1eW/dk1w+UxWzEHdqNGoQioQUPpPA54X4FJZLVWBl8HqabctGWLpB5aeec+blhVlfl7sdCr5aYNFxlgHQtIFPm0RKF29/rS8UPK5LQmvssYN876dKPpaHV2NIJnXoeyeCnPGQotAQiWCDRSh126CWcMsFuVZ/GIU4EhSguzRLps7Cr+PPMFpoiW4EiLwevozWCI8YuhdJN34ClXTSG+z7MuwdYXUkvntzx8p41m/CNdYmKIZdAISbNemeoecYfsauaRYCfhaJzrIRJlARFFVy5ZS5a6Na77q7rxaZCrZac1wqJXadzrMaspvotVoB7F+PTO086JSuLpBVOr3bXC3XgEIEpSuR5ynZXb4Ma6RJMFgD2yXTUlsOYw0Bntv5SodSBCdoiVStuNUHpBYM9QyPxARaRnAuALvBNfU76nBoAzgpSgkZlDm3WFc5f9f1+6Hu1cvbQZ+/9+OQB+RRloixh7yna0oRXxnwdg2xdz27rJ8lfF88hpRUM3FeU=
   matrix:
     - COMPILER=gcc VERSION=4.8
     # - COMPILER=gcc VERSION=4.9
@@ -45,8 +44,6 @@ after_script:
   - docker images
 
 before_deploy:
-  - echo $REGISTRY_USER
-  - echo $REGISTRY_PASS
   - docker login -u "$REGISTRY_USER" -p $REGISTRY_PASS
 
 deploy:
