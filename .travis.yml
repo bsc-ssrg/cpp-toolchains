@@ -9,24 +9,24 @@ env:
     - secure: hdY9MwGsAhh3pcfcW1GN8iCopTMHVjvKKzd5zLw4cI7VXUzHEOggXeqYXha20pTpIASY9Ka9in1Wn4TnkEcePuPeqSVt0r8fpXcqagVL2vUzDEiZvrZFwZp7ZPjEqAOFvz0z6AUooZ433lGq6z0sx8qUQIfvqG/dsS9KbgBTBxnNXf/GvGgP09omlmJbrq6VCz6DFR5lsKIjggSaGOdjqUuB0Nt3UsVdxBgw1wxDwXZXX83d3j5PT8wdpOOmimzDLGQIrbbVTxT/lEaKU2OF6P3hJjMzbr9wXHxI0EUvxk4aQLqhkHxkyU0n0bd+xu/btaFmPqUomcuxwZ1scJQDYPTnohmq2Ne2hmhP+DUWASJ616d/fTBieYpBgoP7yZQVoALndmqhKzBTfQsdag+Y+B9Q+bTgS4O127K8svDA1Gw51nPYT2CZCMHkeUorAIZSI5zH6ftErlAxCmNWga6sMKxkt+EvzHE8pwiDx/CiOpYn8NJoGqEeCmuuqS01YNH0Tk6m4E6Voupm2rMRXOU09I9b3gmkn5cRtdX2u67KSQKHSGLHapA+FS5CjZKUsCpGFbEkmfOnoV2t5dWQ8iUskYV2zBF8swNyr87F9PyOnfD+pNz+bsDYvCPX9hapkqsImOuRv+lzgp5a5HLVanLVy75AoD4S5GYZcncfBrzJMZA=
   matrix:
     - COMPILER=gcc VERSION=4.8
-    # - COMPILER=gcc VERSION=4.9
-    # - COMPILER=gcc VERSION=5.4
-    # - COMPILER=gcc VERSION=6.5
-    # - COMPILER=gcc VERSION=7.4
-    # - COMPILER=gcc VERSION=8.1
-    # - COMPILER=gcc VERSION=9.1
-    # - COMPILER=gcc VERSION=latest
-    # - COMPILER=clang VERSION=3.6
-    # - COMPILER=clang VERSION=3.7
-    # - COMPILER=clang VERSION=3.8
-    # - COMPILER=clang VERSION=3.9
-    # - COMPILER=clang VERSION=4.0
-    # - COMPILER=clang VERSION=5.0
-    # - COMPILER=clang VERSION=6.0
-    # - COMPILER=clang VERSION=7.1
-    # - COMPILER=clang VERSION=8.0
-    # - COMPILER=clang VERSION=9.0
-    # - COMPILER=clang VERSION=latest
+    - COMPILER=gcc VERSION=4.9
+    - COMPILER=gcc VERSION=5.4
+    - COMPILER=gcc VERSION=6.5
+    - COMPILER=gcc VERSION=7.4
+    - COMPILER=gcc VERSION=8.1
+    - COMPILER=gcc VERSION=9.1
+    - COMPILER=gcc VERSION=latest
+    - COMPILER=clang VERSION=3.6
+    - COMPILER=clang VERSION=3.7
+    - COMPILER=clang VERSION=3.8
+    - COMPILER=clang VERSION=3.9
+    - COMPILER=clang VERSION=4.0
+    - COMPILER=clang VERSION=5.0
+    - COMPILER=clang VERSION=6.0
+    - COMPILER=clang VERSION=7.1
+    - COMPILER=clang VERSION=8.0
+    - COMPILER=clang VERSION=9.0
+    - COMPILER=clang VERSION=latest
 
 before_script:
   - env | sort
