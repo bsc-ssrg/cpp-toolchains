@@ -45,6 +45,7 @@ after_script:
   - docker images
 
 before_deploy:
+  - echo $REGISTRY_USER
   - docker login -u $REGISTRY_USER -p $REGISTRY_PASS
 
 deploy:
