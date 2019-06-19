@@ -4,7 +4,7 @@
 [![Docker Pulls](https://img.shields.io/docker/pulls/bscstorage/clang-toolchain.svg?label=docker%20pulls%20%28LLVM%2FClang%29)](https://hub.docker.com/r/bscstorage/clang-toolchain/)
 [![GitHub](https://img.shields.io/github/license/bsc-ssrg/cpp-toolchains.svg?color=blue)](https://github.com/bsc-ssrg/cpp-toolchains/blob/master/LICENSE)
 
-A collection of Docker :whale: containers with official GCC and LLVM/Clang releases under Ubuntu 16.04 Xenial.
+A collection of Docker :whale: containers with official GCC and LLVM/Clang releases based on Ubuntu Trusty/Xenial.
 
 ## Containers for GCC:
 
