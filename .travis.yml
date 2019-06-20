@@ -1,4 +1,3 @@
-# sudo: required
 language: bash
 services: docker
 
@@ -30,17 +29,20 @@ env:
 
 before_script:
   - env | sort
-  - cd "$COMPILER"/"$VERSION"
-  - IMAGE="$COMPILER"-toolchain":$VERSION"
-  - docker pull "$ORGANIZATION"/"$IMAGE" || true
+  - cd "${COMPILER}/${VERSION}"
+  - IMAGE="${COMPILER}-toolchain:${VERSION}"
+  - ( docker pull "${ORGANIZATION}/${IMAGE}" &&
+      docker tag "${ORGANIZATION}/${IMAGE}" "${CACHED_IMAGE}" &&
+      docker rmi "${ORGANIZATION}/${IMAGE}" ) || true
+  - docker images
 
 script:
   - |
     (
       set -Eeuo pipefail
       set -x
-      docker build --pull --cache-from "$ORGANIZATION"/"$IMAGE" --tag "$IMAGE" .
-      docker run -ti --rm "$IMAGE" "$COMPILER" --version
+      docker build --pull --cache-from "${CACHED_IMAGE}" --tag "${IMAGE}" .
+      docker run -ti --rm "${ORGANIZATION}/${IMAGE}" "${COMPILER}" --version
     )
 
 after_script:
@@ -52,6 +54,6 @@ before_deploy:
 deploy:
   provider: script
   script: 
-    - docker push "$ORGANIZATION"/"$IMAGE"
+    - docker push "${ORGANIZATION}/${IMAGE}"
   on:
     branch: master
