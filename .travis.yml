@@ -31,6 +31,7 @@ before_script:
   - env | sort
   - cd "${COMPILER}/${VERSION}"
   - IMAGE="${COMPILER}-toolchain:${VERSION}"
+  - CACHED_IMAGE="cached_image:latest"
   - ( docker pull "${ORGANIZATION}/${IMAGE}" &&
       docker tag "${ORGANIZATION}/${IMAGE}" "${CACHED_IMAGE}" &&
       docker rmi "${ORGANIZATION}/${IMAGE}" ) || true
