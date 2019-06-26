@@ -1,4 +1,4 @@
-FROM ubuntu:xenial
+FROM ubuntu:trusty
 MAINTAINER alberto.miranda@bsc.es
 
 RUN apt-get update && \
