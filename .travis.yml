@@ -42,7 +42,7 @@ script:
     (
       set -Eeuo pipefail
       set -x
-      docker build --pull --cache-from "${CACHED_IMAGE}" --tag "${IMAGE}" .
+      docker build --pull --cache-from "${CACHED_IMAGE}" --tag "${ORGANIZATION}/${IMAGE}" .
       docker run -ti --rm "${ORGANIZATION}/${IMAGE}" "${COMPILER}" --version
     )
 
